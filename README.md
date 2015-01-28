@@ -1,1 +1,2 @@
-# PAWL3SPI
+# PAWL3SPI : Bibliotheque en ligne
+#
