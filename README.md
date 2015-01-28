@@ -1,7 +1,7 @@
 # PAWL3SPI : Bibliotheque en ligne
 ##But
 Le but de ce site internet est de permettre aux visiteurs de faire l’inventaire des livres qu’ils possèdent et/ou ont lus et/ou veulent lire, en d’autres termes, leur bibliothèque. 
-Pour cela, notre site devra donc remplir les conditions suivantes :
+Pour cela, notre site devra donc remplir les conditions suivantes:
 - Les visiteurs pourront s’inscrire au site
 - Les visiteurs et les membres pourront consulter la fiche des films présents dans la base
 de données
