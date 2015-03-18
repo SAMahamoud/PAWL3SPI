@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Creation d'un livre</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('livre') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}
+{% use 'BlBibliothequeBundle:Admin:sidebar_admin.html.twig' %}

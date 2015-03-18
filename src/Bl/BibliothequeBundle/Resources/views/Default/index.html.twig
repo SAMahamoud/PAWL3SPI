@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bibliotheque en ligne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{{ asset('bundles/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/bootstrap/css/bibliotheque-spec.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/bootstrap/css/font-awesome.min.css') }}" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+    </style>
+    <link href="{{ asset('bundles/bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Tri par genre</li>
+              <li class="active"><a href="#">Tous <span class="badge badge-info">300</span></a></li>
+              <li><a href="#">Science <span class="badge badge-info">10</span></a></li>
+              <li><a href="#">Informatique <span class="badge badge-info">10</span></a></a></li>
+              <li><a href="#">Litterature <span class="badge badge-info">10</span></a></a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span sidebar-->
+
+        <div class="span9">
+          <div class="hero-unit">
+            <div class="block">
+                <h2>CSS3</h2>
+                <div class="tags-list"><span class="badge">Science</span><span class="badge">Informatique</span></div>
+                <div class="illustration">
+                    <span class="fa fa-ban"></span>
+                </div>
+                <div class="description">
+                    Pour embellir vos interfaces, ou élaborer des animations, le lecteur apprendra grâce à de nombreux exemples à maîtriser les techniques pour la réalisation de sites...
+                </div>
+                <div class="read-more">
+                    <a class="btn btn-primary btn-small">Voir</a>
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>Big Data et Machine Learning</h2>
+                <div class="tags-list"><span class="badge">Science</span><span class="badge">Informatique</span></div>
+                <div class="illustration">
+                    <span class="fa fa-ban"></span>
+                </div>
+                <div class="description">
+                    Un Guide essentiel pour comprendre les enjeux d'un projet Big Data
+                </div>
+                <div class="read-more">
+                    <a class="btn btn-primary btn-small">Lire</a>
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>Les fiches outils des réseaux sociaux</h2>
+                <div class="tags-list"><span class="badge">Science</span><span class="badge">Informatique</span></div>
+                <div class="illustration">
+                    <span class="fa fa-ban"></span>
+                </div>
+                <div class="description">
+                    Avantages, inconvénients, ligne juridique, conseils et ressources en ligne... : optimisez votre communication via les réseaux sociaux et faites du marketing digital l'un de vos meilleurs atouts !
+                </div>
+                <div class="read-more">
+                    <a class="btn btn-primary btn-small">Lire</a>
+                </div>
+            </div>
+
+            <div class="block">
+                <h2>Les VPN</h2>
+                <div class="tags-list"><span class="badge">Science</span><span class="badge">Informatique</span></div>
+                <div class="illustration">
+                    <span class="fa fa-ban"></span>
+                </div>
+                <div class="description">
+                    Ce livre sur les VPN (Virtual Private Network) s'adresse à un public d'informaticiens disposant de connaissances de base sur les réseaux et souhaitant acquérir des compétences pour mettre en place une solution de Réseau Privé Virtuel.
+                </div>
+                <div class="read-more">
+                    <a class="btn btn-primary btn-small">Lire</a>
+                </div>
+            </div>
+
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>© SAID AHMED 2015</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ asset('bundles/bootstrap/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/bootstrap/js/app.js') }}"></script>
+
+  </body>
+</html>

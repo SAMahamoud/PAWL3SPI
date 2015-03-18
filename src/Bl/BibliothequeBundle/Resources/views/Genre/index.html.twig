@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Liste des Genres</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Label</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('genre_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.label }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('genre_show', { 'id': entity.id }) }}">regarder</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('genre_edit', { 'id': entity.id }) }}">editer</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('genre_new') }}">
+                Créez une nouvelle entrée
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
+{% use 'BlBibliothequeBundle:Admin:sidebar_admin.html.twig' %}

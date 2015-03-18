@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+{% block title %}Authentification requise{% endblock %}
+
+{% block body %}
+    {% if error %}
+        <div class="error">{{ error.message }}</div>
+    {% endif %}
+
+    <form action="{{ path('_security_login_check') }}" method="POST">
+
+        <input type="hidden" name="_target_path" value="{{ url('bl_bibliotheque_admin') }}" />
+
+        <div>
+            <label for="username">Utilisateur:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+        </div>
+
+        <div>
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="_password" />
+        </div>  
+
+        <input type="submit" name="login" value="submit" />
+
+    </form>
+{% endblock %}
+
+
