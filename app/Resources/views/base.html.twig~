@@ -27,10 +27,21 @@
 
   <body>
     <div class="container-fluid">
+	<div class= "menu_connexion">	
+		<!-- Pour la connexion des utilisateurs -->
+
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	       		Connecté en tant que {{ app.user.username }} - <a href="{{path('fos_user_security_logout') }}">Déconnexion</a>
+            	{% else %}
+               		<a href="{{ path('fos_user_security_login') }}">Connexion</a>
+           	{% endif %}
+	</div>
+	
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
             {% block sidebar %}{% endblock %}
+
           </div><!--/.well -->
         </div><!--/span sidebar-->
 
