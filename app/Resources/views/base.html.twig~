@@ -27,14 +27,26 @@
 
   <body>
     <div class="container-fluid">
-	<div class= "menu_connexion">	
+	<div class= "">	
 		<!-- Pour la connexion des utilisateurs -->
 
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-	       		Connecté en tant que {{ app.user.username }} - <a href="{{path('fos_user_security_logout') }}">Déconnexion</a>
-            	{% else %}
-               		<a href="{{ path('fos_user_security_login') }}">Connexion</a>
-           	{% endif %}
+                {# L'utilisateur est-il connecté ? #}
+		{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+   		        {# L'utilisateur est connecté ! #}
+    			Connecté en tant que {{ app.user.username }} - <a href="{{path('fos_user_security_logout') }}">Déconnexion</a>
+
+    			{# L'utilisateur est-il admin ? #}
+    			{% if is_granted('ROLE_ADMIN') %}
+        			{# L'utilisateur est admin ! #}
+        			<a href="{{ path('admin') }}">Administration</a>
+		{% endif %}
+		{% else %}
+			{# L'utilisateur n'est pas connecté ! #}
+			<a href="{{ path('fos_user_security_login') }}">Connexion</a>
+			<a href="{{ path('fos_user_registration_register') }}">Inscription</a>
+		{% endif %}
+           	
+
 	</div>
 	
       <div class="row-fluid">

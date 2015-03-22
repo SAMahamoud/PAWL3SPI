@@ -13,7 +13,7 @@ class AdminController extends Controller
     public function indexAction()
     {
         /**
-         * Comme @Template() est vide, il va chercher par défaut le fichier dans bibliothequeBundle/views/Admin/index.html.twig
+         * Comme @Template() est vide, il va chercher par défaut le fichier dans bibliothequeBundle/Ressources/views/Admin/index.html.twig
          */
         return array();
     }
