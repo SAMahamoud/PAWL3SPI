@@ -1,7 +1,35 @@
 {% block sidebar %}
+
+    
+    <ul class="nav nav-list">
+
+	{# Pour la connexion des utilisateurs #}
+	<li class="nav-header">Bibliotheque</li>
+                {# L'utilisateur est-il connecté ? #}
+		<li {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %} class="active"
+   		        {# L'utilisateur est connecté ! #}
+    			Connecté en tant que {{ app.user.username }}  <a href="{{path('fos_user_security_logout') }}">Déconnexion</a>
+
+    			{# L'utilisateur est-il admin ? #}
+    			{% if is_granted('ROLE_ADMIN') %}
+        			{# L'utilisateur est admin ! #}
+        			<a href="{{ path('admin') }}">Administration</a>
+		{% endif %}
+		{% else %}
+			{# L'utilisateur n'est pas connecté ! #}
+			<li> <a href="{{ path('fos_user_security_login') }}">Connexion</a> </li>
+			<li> <a href="{{ path('fos_user_registration_register') }}">Inscription</a> </li>
+		{% endif %}
+
+
+    </ul>
+
+
     <ul class="nav nav-list">
         <li class="nav-header">Tri par genre</li>
-        <li {% if selected_genre < 1 %}class="active"{% endif %}><a href="{{ path('_index') }}">Tous <span class="badge badge-info">{{ total_nb_livres }}</span></a></li>
+        <li {% if selected_genre < 1 %}class="active"{% endif %}>
+		<a href="{{ path('_index') }}">Tous <span class="badge badge-info">{{ total_nb_livres }}</span></a>
+	</li>
         {% for genre in genres %}
             <li {% if genre['genre'].id == selected_genre %}class="active"{% endif %}><a href="{{ path('_filter_by_genre', { 'label': genre['genre'].label }) }}">{{ genre['genre'].label }} <span class="badge badge-info">{{ genre['nbConcernedLivres'] }}</span></a></li>
         {% endfor %}
